@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fuente:'Manrope', sans-serif;
+    /* Colors */
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+body{
+    font-family: var(--fuente);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: hsl(212, 23%, 69%,0.3);
+}
+
+.card{
+    display: flex;
+    background-color: var(--LightGrayishBlue);
+    border-radius: 10px;
+    box-shadow: 0 0 50px  var(--DesaturatedDarkBlue);
+}
+.card_uno{
+    width: 250px;
+    overflow: hidden;
+}
+.card_uno img{
+    width: 122%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+/* ------------------------ */
+
+.card_dos{
+    padding: 30px;
+    width: 430px;
+    position: relative;
+}
+.card_dos > h2{
+    margin-bottom: 10px;
+    color: var(--VeryDarkGrayishBlue);
+}
+.card_dos > p{
+    margin-bottom: 15px;
+    color: var(--DesaturatedDarkBlue);
+}
+.card_dos .datos{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.card_dos .datos h4{
+    color: var(--VeryDarkGrayishBlue);
+    padding-bottom: 3px;
+}
+.card_dos .datos p{
+    color: var(--DesaturatedDarkBlue);
+}
+.card_dos .compartir{
+    position: absolute;
+    right: 0;
+    background-color: hsl(212, 23%, 69%,0.3);
+    padding: 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s ease-out;
+}
+.card_dos .compartir:hover{
+    color: var(--LightGrayishBlue);
+    background-color: var(--GrayishBlue);
+}
+.card_dos .mostrar.compartir{
+    background-color: var(--GrayishBlue);;
+}
+.card_dos .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px ;
+}
+.card_dos .ventana{
+   display: flex;
+   position: absolute;
+   background-color: var(--VeryDarkGrayishBlue);
+   width: 230px;
+   height: 46px;
+   align-items: center;
+   justify-content: space-around;
+   top: 125px;
+   right: -68px;
+   padding: 0 25px;
+   border-radius: 10px;
+   transition: all .5s ease-out;
+   opacity: 0;
+}
+.card_dos .mostrar.ventana{
+    opacity: 1;
+}
+.card_dos .ventana p{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: .85em;
+    color: var(--DesaturatedDarkBlue);
+}
+.card_dos .ventana img{
+    width: 10%;
+     
+}
+.card_dos .ventana img:hover{
+    scale: 1.2;  
+}
+.card_dos .rect{
+    width: 18px;
+    height: 18px;
+    background-color: var(--VeryDarkGrayishBlue);
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -9px;
+}
+
+@media(min-width:200px) and (max-width:830px){
+
+    .card{
+        flex-direction: column;
+        
+    }
+    .card_uno{
+        width: 360px;
+        overflow: hidden;
+      
+    }
+    .card_uno img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 0 0px;
+    }
+    .card_dos{
+        padding: 20px;
+        width: 360px;
+    }
+    .card_dos > h2{
+        font-size: 1.4em;
+    }
+    .card_dos > p{
+        margin-bottom: 30px;
+    }
+    .card_dos .rect{
+        display: none;
+    }
+    .card_dos .ventana{
+        opacity: 0;
+        top: 190px;
+        right: 0px;
+        width: 360px;
+        padding: 0px 30px;
+        height: 75px;
+        border-radius: 0 0 10px 10px;
+        justify-content: flex-start;
+    }
+    .card_dos .ventana p{
+        font-size: 1.1em;
+        margin-right: 15px;
+    }
+    .card_dos .ventana img{
+        width: 7%;
+        margin-right: 15px;
+    }
+    .card_dos .compartir{
+        z-index: 1;
+    }
+}
